@@ -6,22 +6,77 @@
     <title>Currículo Isabeli Rezende</title>
 
     <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-  <style>
+  <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
     body {
-      background-color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
     }
-    .container {
-      background-color: white;
-      padding: 30px;
-      margin-top: 20px;
+    
+    /* NAVBAR */
+    .navbar {
+      border: none;
+    }
+    
+    /* HEADER */
+    .header {
+      text-align: center;
+      padding: 40px 0;
+    }
+    
+    .header h1 {
+      font-weight: 600;
+      font-size: 42px;
+    }
+    
+    .header p {
+      color: gray;
+      font-size: 16px;
+    }
+    
+    /* CONTAINER */
+    .container-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    /* TITLES */
+    .section-title {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    /* PANELS */
+    .panel {
       border-radius: 10px;
+      transition: 0.3s;
     }
-    h1, h2 {
-      font-weight: bold;
+    
+    .panel:hover {
+      transform: translateY(-5px);
     }
-  </style>
+    
+    /* BUTTONS */
+    .btn {
+      margin: 10px;
+      border-radius: 25px;
+      padding: 10px 20px;
+    }
+    
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: gray;
+    }
+    </style>
 </head>
 
 <body>
@@ -43,26 +98,23 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container container-box">
 
-    <div class="text-center">
+    <div class="header">
         <h1>ISABELI ROCHA DE REZENDE</h1>
-        <p>Vitória, ES | +55 27 99931-5042 | isabelirezende30@gmail.com | linkedin.com/in/isabelirezende</p>
+        <p>Vitória, ES | +55 27 99931-5042 | 
+            <a href="mailto:isabelirezende30@gmail.com">isabelirezende30@gmail.com</a> | 
+            <a href="https://linkedin.com/in/isabelirezende" target="_blank">LinkedIn</a>
+        </p>
     </div>
 
     <hr> <!-- quebra temática para estruturar diferentes conteudos e paragrafos, mudança de tópico -->
 
     <!-- OBJETIVO -->
-    <div id="objetivo">
-        <h2>Objetivo</h2>
-        <p>
-        Atuar na área de Tecnologia, com interesse em projetos, automação e desenvolvimento web,
+    <h2 id="objetivo" class="section-title">Objetivo</h2>
+    <p> Atuar na área de Tecnologia, com interesse em projetos, automação e desenvolvimento web,
         contribuindo para a otimização de processos, evolução de soluções e geração de valor para a empresa, 
-        enquanto aprofundo minha experiência prática e visão de negócio.
-        </p>
-    </div>
-    
-    <hr>
+        enquanto aprofundo minha experiência prática e visão de negócio.</p>
     
     <!-- GRID-->
     <div class="row">
@@ -153,9 +205,7 @@
     <hr>
 
     <!-- OBJETIVO EM 5 ANOS -->
-     <div>
-        <h2>Objetivo Profissional em 5 anos</h2>
-
+    <h2 class="section-title">Objetivo em 5 anos</h2>
         <p>
         Daqui a cinco anos, pretendo estar realizada profissionalmente, atuando de forma remota para empresas internacionais na área de tecnologia, 
         em uma atuação que faça sentido para mim e proporcione liberdade financeira e geográfica.<br>
@@ -165,20 +215,36 @@
         no futuro, estruturar e expandir meu próprio empreendimento.
         </p>
 
-     </div>
-
-     <br>
-
-    <!-- BOTÃO -->
+    <!-- BOTÕES -->
     <div class="text-center">
         <a href="mailto:isabelirezende30@gmail.com" 
-        class="btn btn-sucess btn-lg">Entrar em contato por email</a>
+        class="btn btn-primary btn-lg">📧 Email</a>
 
         <a href="https://wa.me/5527999315042?text=Olá%20Isabeli,%20vi%20seu%20site%20e%20gostaria%20de%20falar%20com%20você!" 
         target="_blank" 
-        class="btn btn-success btn-lg">Entrar em contato no WhatsApp</a>
+        class="btn btn-success btn-lg">📱 WhatsApp
+        </a>
+    </div>
+    
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2026 Isabeli Rezende — Desenvolvido por mim</p>
     </div>
 </div>
+    
+    <!-- SCRIPT SCROLL SUAVE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('a[href^="#"]').on('click', function(event) {
+            event.preventDefault();
+            var target = $(this.getAttribute('href'));
+            if(target.length){
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 800);
+            }
+        });
+    </script>
 
 </body>
 </html>
